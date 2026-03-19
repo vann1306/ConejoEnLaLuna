@@ -36,7 +36,7 @@ body {
     grid-template-rows: repeat(2, 1fr);
     gap: min(40px, 5%);
     width: 85%;
-    height: 60%;
+    height: 75%;
     position: relative;
     z-index: 2;
     align-items: end; 
