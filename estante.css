@@ -16,12 +16,15 @@ body {
 }
 
 .estante-container {
-    position: absolute;
-    width: min(100%, 100%);
+    position: relative; /* Cambiado de absolute a relative */
+    width: 100%;
+    max-width: 1200px;
     aspect-ratio: 16/9; 
+    margin: 0 auto; /* Centrar */
     background-image: url('img/estante.png');
-    background-size: contain;
-    background-position: absolute;
+    background-size: 100% 100%; /* FORZAR tamaño exacto */
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
