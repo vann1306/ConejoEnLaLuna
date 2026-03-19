@@ -151,8 +151,10 @@ body {
 #objeto-conejo {
        max-height: 300px;
     width: auto;
+    margin-bottom: 10px;
 }
 #objeto-shama {
     max-height: 300px;
     width: auto; 
+    margin-bottom: 10px;
 }
