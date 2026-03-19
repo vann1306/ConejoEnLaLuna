@@ -133,23 +133,24 @@ body {
 #objeto-africa {
     max-height: 300px;
     width: auto;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 #objeto-japon {
     max-height: 300px;
     width: auto;
+    margin-bottom: -30px;
 }
 
 #objeto-mexica {
     margin-bottom: -10px; 
 }
 #objeto-china {
-    margin-bottom: 10px; 
+    margin-bottom: 30px; 
 }
 #objeto-conejo {
-    margin-bottom: 10px; 
+    margin-bottom: 30px; 
 }
 #objeto-shama {
-    margin-bottom: 10px; 
+    margin-bottom: 30px; 
 }
