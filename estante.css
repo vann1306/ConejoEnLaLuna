@@ -109,7 +109,7 @@ body {
    ========================================== */
 .objeto-tooltip {
     position: absolute;
-    bottom: 30px; 
+    bottom: 5%; 
     left: 50%;
     transform: translateX(-50%);
     background: rgba(11, 7, 35, 0.8);
@@ -133,24 +133,24 @@ body {
 #objeto-africa {
     max-height: 300px;
     width: auto;
-    margin-bottom: 20%;
+    margin-bottom: 200px;
 }
 
 #objeto-japon {
     max-height: 300px;
     width: auto;
-    margin-bottom: 30%;
+    margin-bottom: 200px;
 }
 
 #objeto-mexica {
-    margin-bottom: 10%; 
+    margin-bottom: 150px; 
 }
 #objeto-china {
-    margin-bottom: 40%; 
+    margin-bottom: 150px; 
 }
 #objeto-conejo {
-    margin-bottom: 30%; 
+    margin-bottom: 30px; 
 }
 #objeto-shama {
-    margin-bottom: 30%; 
+    margin-bottom: 30px; 
 }
