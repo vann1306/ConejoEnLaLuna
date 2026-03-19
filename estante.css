@@ -35,8 +35,8 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: min(40px, 5%);
-    width: 90%;
-    height: 88%;
+    width: 85%;
+    height: 80%;
     position: relative;
     z-index: 2;
     align-items: end; 
