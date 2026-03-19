@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El conejo de jade · Cultura China</title>
+
+    <!-- Tipografía pincel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&display=swap" rel="stylesheet">
+    
+    <!-- Tipografía general -->
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS específico de China -->
+    <link rel="stylesheet" href="cultura-china.css">
+</head>
+<body>
+
+    <!-- Contenedor sticky principal -->
+    <div class="pantalla-fija" id="pantallaChina">
+        
+        
+        <div class="escena">
+            
+            
+            
+            <!-- Pantalla 1: Nubes acuarela -->
+            <img src="img/nube-izq.png" class="nube-agua nube-izq" id="nubeIzq" alt="Nube acuarela">
+            <img src="img/nube-der.png" class="nube-agua nube-der" id="nubeDer" alt="Nube acuarela">
+            
+            <!-- Pantalla 2: Chang'e -->
+            <img src="img/change.png" class="personaje change" id="change" alt="Chang'e diosa lunar">
+            
+            <!-- Pantalla 3: Animales -->
+            <img src="img/cmono.png" class="animal mono" id="mono" alt="Mono">
+            <img src="img/czorro.png" class="animal zorro" id="zorro" alt="Zorro">
+            <img src="img/cconejo.png" class="animal conejo-pequeno" id="conejoPequeno" alt="Conejito">
+            
+            <!-- Pantalla 4 y 9: Anciano -->
+            <img src="img/anciano.png" class="fondo-completo anciano" id="anciano" alt="Anciano">
+            
+            <!-- Pantalla 5: Fruta y pescado -->
+            <img src="img/fruta.png" class="objeto fruta" id="fruta" alt="Fruta">
+            <img src="img/pescado.png" class="objeto pescado" id="pescado" alt="Pescado">
+            
+            <!-- Pantalla 6: Conejo pensando con idea -->
+            <img src="img/conejo_pensando.png" class="personaje conejo-pensando" id="conejoPensando" alt="Conejo pensando">
+            <img src="img/idea.png" class="efecto idea" id="idea" alt="Idea">
+            
+            <!-- Pantalla 7: Conejo sentado -->
+            <img src="img/conejo_sentado.png" class="personaje conejo-sentado" id="conejoSentado" alt="Conejo sentado">
+            
+            <!-- Pantalla 8: Escena del fuego -->
+            <img src="img/escenasalto.png" class="fondo-completo escena-fuego" id="escenaFuego" alt="Escenario">
+            <img src="img/fogata_encendida.png" class="objeto fogata" id="fogataEncendida" alt="Fogata encendida">
+            <img src="img/fogata_apagada.png" class="objeto fogata" id="fogataApagada" alt="Fogata apagada">
+            <img src="img/conejo_salto.png" class="personaje conejo-salto" id="conejoSalto" alt="Conejo saltando">
+            
+            <!-- Pantalla 10: Conejo en luna -->
+            <img src="img/conejo_enluna.png" class="fondo-completo conejo-luna" id="conejoLuna" alt="Conejo en la luna">
+            
+            <!-- Pantalla 11: Conejo lunar final -->
+            <img src="img/conejo_lunar.png" class="personaje conejo-lunar-final" id="conejoLunarFinal" alt="Conejo lunar">
+        </div>
+        <!-- ========================================== -->
+        <!-- TEXTOS (cambian con scroll)               -->
+        <!-- ========================================== -->
+        <div class="contenedor-textos" id="contenedorTextos">
+            <!-- Pantalla 1 -->
+            <div class="texto-activo titulo-principal" id="texto1">
+                <h1 class="titulo-pincel">El conejo de jade</h1>
+                <p class="subtitulo">Cultura china</p>
+            </div>
+            
+            <!-- Pantalla 2 -->
+            <div class="texto-activo texto-izquierda" id="texto2">
+                En el cielo vive Chang'e, la diosa de la luna.<br>
+                Y no está sola.<br>
+                A su lado vive el Conejo de Jade.
+            </div>
+            
+            <!-- Pantalla 3 -->
+            <div class="texto-activo texto-inferior" id="texto3">
+                Dicen que hace mucho tiempo, tres animales:<br>
+                un mono, un zorro y un conejo
+            </div>
+            
+            <!-- Pantalla 4 -->
+            <div class="texto-activo texto-derecha" id="texto4">
+                encontraron a un anciano hambriento en el bosque
+            </div>
+            
+            <!-- Pantalla 5 (primer texto) -->
+            <div class="texto-activo texto-inferior" id="texto5a">
+                El mono le dio frutas.
+            </div>
+            
+            <!-- Pantalla 5 (segundo texto) -->
+            <div class="texto-activo texto-inferior" id="texto5b">
+                El zorro le llevó pescado.
+            </div>
+            
+            <!-- Pantalla 5 (tercer texto) -->
+            <div class="texto-activo texto-inferior" id="texto5c">
+                Pero el conejo no tenía nada
+            </div>
+            
+            <!-- Pantalla 6 -->
+            <div class="texto-activo texto-izquierda" id="texto6">
+                Entonces pensó un momento...<br>
+                y tomó una decisión.
+            </div>
+            
+            <!-- Pantalla 7 -->
+            <div class="texto-activo texto-derecha" id="texto7">
+                "No tengo comida,<br>pero puedo ofrecerme yo."
+            </div>
+            
+            <!-- Pantalla 8 (primer texto) -->
+            <div class="texto-activo texto-inferior" id="texto8a">
+                Saltó al fuego para convertirse en alimento.
+            </div>
+            
+            <!-- Pantalla 8 (segundo texto) -->
+            <div class="texto-activo texto-inferior" id="texto8b">
+                Pero el anciano era en realidad un dios.
+            </div>
+            
+            <!-- Pantalla 8 (tercer texto) -->
+            <div class="texto-activo texto-inferior" id="texto8c">
+                Apagó las llamas
+            </div>
+            
+            <!-- Pantalla 9 -->
+            <div class="texto-activo texto-derecha" id="texto9">
+                le dijo:<br>
+                —Tu corazón es puro—
+            </div>
+            
+            <!-- Pantalla 10 -->
+            <div class="texto-activo texto-inferior" id="texto10">
+                Como premio, llevó al conejo a la luna.<br>
+                Allí vive para siempre, moliendo con un mortero<br>
+                el elixir de la vida eterna.
+            </div>
+            
+            <!-- Pantalla 11 (primer texto) -->
+            <div class="texto-activo texto-izquierda" id="texto11a">
+                En China, cuando la luna está llena y brillante,<br>
+                muchos niños dicen:<br>
+                —¡Mira! ¡Ahí está el conejo<br>
+                preparando medicina mágica!—
+            </div>
+            
+            <!-- Pantalla 11 (segundo texto) -->
+            <div class="texto-activo texto-derecha" id="texto11b">
+                —¡Mira! ¡Ahí está el conejo<br>
+                preparando medicina mágica!—
+            </div>
+        </div>
+        
+        <!-- Indicador de scroll (sutil) -->
+        <div class="scroll-indicator">⌄</div>
+    </div>
+<!-- INDICADOR DE PUNTITOS -->
+<div class="puntitos-container">
+    <div class="puntito puntito-activo"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+   
+
+</div>
+    <script src="cultura-china.js"></script>
+<div class="pantalla-final" id="pantallaFinal">
+            <div class="fondo-negro"></div>
+            <a href="estante-culturas.html" class="boton-final">
+                <span>Volver al estante</span>
+            </a>
+        </div>
+
+
+</body>
+</html>

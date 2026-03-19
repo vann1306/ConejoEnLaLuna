@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El conejo que tocó la luna · Cultura Mexica</title>
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tipografía pincel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&display=swap" rel="stylesheet">
+    <!-- CSS específico -->
+
+    <link rel="stylesheet" href="cultura-mexica.css">
+</head>
+<body>
+
+    <div class="pantalla-fija" id="pantallaMexica">
+        
+        <!-- ========================================== -->
+        <!-- ESCENA (elementos visuales) -->
+        <!-- ========================================== -->
+        <div class="escena">
+            
+            <!-- Fondo textura (siempre visible) -->
+            <img src="img/texturam.jpg" class="fondo-textura" id="fondoTextura">
+            
+            <!-- Mapa del mundo (pantalla 2) -->
+            <img src="img/mapam.png" class="mapa" id="mapa">
+            
+            <!-- Tierra / suelo (base) -->
+            <img src="img/tierra.jpg" class="suelo" id="tierra">
+            
+            <!-- Río (reemplaza a tierra) -->
+            <img src="img/rio.png" class="suelo rio" id="rio">
+            
+            <!-- Quetzalcóatl -->
+            <img src="img/quetz.png" class="quetzal" id="quetzal">
+            
+            <!-- Sol y luna -->
+            <img src="img/solm.png" class="sol" id="sol">
+            <img src="img/lunam.png" class="luna" id="luna">
+            
+            <!-- Montaña -->
+            <img src="img/montana.png" class="montana" id="montana">
+            
+            <!-- Ideogramas de voz -->
+            <img src="img/voz.png" class="voz voz-derecha" id="vozDerecha">
+            <img src="img/voz2.png" class="voz voz-izquierda" id="vozIzquierda">
+            
+            <!-- Conejo -->
+            <img src="img/mconejo.png" class="conejo" id="conejo">
+            
+            <!-- Manos sosteniendo conejo -->
+            <img src="img/manconejo.png" class="manos" id="manos">
+            
+            <!-- Conejo en la luna (final) -->
+            <img src="img/lunaconmex.png" class="conejo-luna-final" id="conejoLunaFinal">
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TEXTOS (formato similar a China) -->
+        <!-- ========================================== -->
+        <div class="contenedor-textos" id="contenedorTextos">
+            
+            <!-- Pantalla 1: Título -->
+            <div class="texto-activo titulo-principal" id="texto1">
+                <h1 class="titulo-pincel">El conejo que tocó la luna</h1>
+                <p class="subtitulo">Cultura mexica</p>
+            </div>
+            
+            <!-- Pantalla 2: Texto inicial -->
+            <div class="texto-activo texto-inferior" id="texto2">
+                Hace mucho, mucho tiempo, cuando los dioses todavía caminaban por la Tierra
+            </div>
+            
+            <!-- Pantalla 3: Textos superiores -->
+            <div class="texto-activo texto-superior" id="texto3">
+                Quetzalcóatl decidió viajar para conocer el mundo.
+            </div>
+            
+            <div class="texto-activo texto-superior" id="texto4">
+                Caminó durante días y noches
+            </div>
+            
+            <div class="texto-activo texto-superior" id="texto5">
+                Cruzó montañas, ríos y desiertos
+            </div>
+            
+            <!-- Pantalla 4: Textos medios -->
+            <div class="texto-activo texto-centro" id="texto6">
+                Hasta que un día, muy cansado y con mucha hambre, se sentó bajo el cielo oscuro
+            </div>
+            
+            <div class="texto-activo texto-centro" id="texto7">
+                – Tengo hambre… y no traje nada para comer – dijo en voz baja.
+            </div>
+            
+            <div class="texto-activo texto-centro" id="texto8">
+                Un pequeño conejo que pastaba cerca lo escuchó. Se acercó con cuidado.
+            </div>
+            
+            <!-- Pantalla 5: Diálogos -->
+            <div class="texto-activo texto-centro" id="texto9">
+                – Yo solo como hierba – dijo el conejo –. Pero si tienes hambre, puedes comerme a mí.
+            </div>
+            
+            <div class="texto-activo texto-centro" id="texto10">
+                Quetzalcóatl abrió los ojos sorprendido.<br>– ¿Te ofrecerías para salvarme?
+            </div>
+            
+            <div class="texto-activo texto-centro" id="texto11">
+                – Sí. Sí eso te ayuda, vale la pena.
+            </div>
+            
+            <!-- Pantalla 5: Manos -->
+            <div class="texto-activo texto-izquierda" id="texto12">
+                El dios se conmovió tanto que levantó al conejo en sus brazos y lo acercó al cielo.
+            </div>
+            
+            <div class="texto-activo texto-izquierda" id="texto13">
+                – No te comeré. Pero todos recordarán tu bondad.
+            </div>
+            
+            <!-- Pantalla 6: Final -->
+            <div class="texto-activo texto-izquierda" id="texto14">
+                Entonces, lo estampó suavemente contra la luna brillante.<br><br>
+                Desde esa noche, cuando miramos la luna llena, podemos ver la silueta de un conejo.<br><br>
+                Y así, un pequeño acto de generosidad se volvió eterno.
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PANTALLA FINAL (regreso al estante) -->
+        <!-- ========================================== -->
+        <div class="pantalla-final" id="pantallaFinal">
+            <div class="fondo-negro"></div>
+            <a href="estante-culturas.html" class="boton-final">
+                
+                <span>Volver al estante</span>
+            </a>
+        </div>
+        
+        <!-- Indicador de scroll -->
+        <div class="scroll-indicator">⌄</div>
+    </div>
+<div class="puntitos-container">
+    <div class="puntito puntito-activo"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+    <div class="puntito"></div>
+</div>
+    <script src="cultura-mexica.js"></script>
+</body>
+</html>

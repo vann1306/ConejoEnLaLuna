@@ -1,0 +1,445 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sen', sans-serif;
+    background-color: #ffffff; 
+    height: 1100vh; 
+    overflow-x: hidden;
+}
+
+/* ===CONTENEDOR STICKY === */
+.pantalla-fija {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: white;
+}
+
+/* ===ESCENA (todos los elementos visuales)=== */
+.escena {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* Estilo base para imágenes */
+img {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* Cuando un elemento está activo (clase añadida por JS) */
+img.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===TIPOGRAFÍA PINCEL=== */
+.titulo-pincel {
+    font-family: 'Kolker Brush', cursive;
+    font-size: 6rem;
+    color: #5d1919;
+    text-shadow: 2px 2px 4px rgba(48, 34, 34, 0.1);
+    line-height: 0.8;
+    margin-bottom: 20%;
+}
+
+.subtitulo {
+    font-family: 'sen', sans-serif;
+    font-size: 2 rem;
+    letter-spacing: 4px;
+    color: #200a0a;
+    text-transform: uppercase;
+    margin-bottom: 5%;
+}
+
+/* ===NUBES ACUARELA (Pantalla 1)=== */
+.nube-agua {
+
+    opacity: 0.6;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.05));
+}
+
+.nube-izq {
+    width: 300px;
+    left: 5%;
+    top: 60%;
+    animation: flotarIzquierda 7s ease-out forwards;
+}
+
+.nube-der {
+    width: 450px;
+    right: 5%;
+    top: 20%;
+    animation: flotarDerecha 7s ease-out forwards;
+}
+
+@keyframes flotarIzquierda {
+    0%{ transform: translateX(0) translateY(0);
+    opacity: 0.1; }
+    50% { transform: translateX(-100px) translateY(10px);
+    opacity: 1; }
+    100% { transform: translateX(-200px) translateY(10px);
+    opacity: 0; }
+}
+
+@keyframes flotarDerecha {
+    0% { transform: translateX(0) translateY(0);
+    opacity: 0.1; }
+    50% { transform: translateX(100px) translateY(-10px); 
+    opacity: 1; }
+    100% { transform: translateX(200px) translateY(-20px);
+    opacity: 0; }
+}
+
+/* ===POSICIONES DE PERSONAJES=== */
+.change {
+    width: 350px;
+    right: 5%;
+    bottom: 10%;
+}
+
+/* Animales (Pantalla 3) */
+.animal {
+    max-width: 300px;
+    bottom: 40%;
+}
+
+.mono {
+    left: 10%;
+    top: 20%;
+    transition-delay: 0.5s;
+    width: 290px;
+}
+
+.zorro {
+    left: 38%;
+    top: 20%;
+    transition-delay: 1s;
+    width: 220px;
+}
+
+.conejo-pequeno {
+    left: 67%;
+    top:35%;
+    transition-delay:1.5s;
+    width: 130px;
+}
+
+/* Anciano (Pantalla 4 y 9) */
+.fondo-completo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+/* Objetos (Pantalla 5) */
+.objeto {
+    
+    bottom: 45%;
+}
+
+.fruta {
+    left: 25%;
+    width: 400px;
+    transition-delay: 0.5s;
+}
+
+.pescado {
+    left: 50%;
+    width: 260px;
+    transition-delay: 1s;
+}
+
+/* Conejo pensando (Pantalla 6) */
+.conejo-pensando {
+    width: 240px;
+    right: 30%;
+    bottom: 18%;
+}
+
+.idea {
+    width: 60px;
+    right: 46%;
+    top: 13%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.idea.activo {
+    opacity: 1;
+    animation: brillar 2s ease-in-out infinite;
+}
+@keyframes brillar {
+    0% { opacity:0 ; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(1); }
+}
+
+
+
+
+/* Conejo sentado (Pantalla 7) */
+.conejo-sentado {
+    width: 250px;
+    left: 20%;
+    bottom: 15%;
+}
+
+/* Escena del fuego (Pantalla 8) */
+.escena-fuego {
+    z-index: 1;
+}
+
+.fogata {
+    width: 250px;
+    bottom: 28%;
+    right: 26%;
+    z-index: 2;
+}
+
+.conejo-salto {
+    width: 120px;
+    left: 10%;
+    bottom: 15%;
+    z-index: 3;
+    transition: all 6s cubic-bezier(1, 2, 3, 4);
+}
+
+.conejo-salto.activo {
+    transform: translate(450px, -400px) scale(1.2);
+}
+
+/* Conejo en luna (Pantalla 10) */
+.conejo-luna {
+    z-index: 2;
+}
+
+/* Conejo lunar final (Pantalla 11) */
+.conejo-lunar-final {
+    width: 450px;
+    right: 20%;
+    bottom: 20%;
+    z-index: 3;
+}
+
+
+
+/* ===BOTÓN DE CERÁMICA FINAL=== */
+.boton-ceramica {
+    position: fixed !important; 
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0) !important;
+    width: 150px !important;
+    height: auto !important;
+    z-index: 999999 !important; 
+    opacity: 0 !important;
+    transition: all 0.5s ease !important;
+    pointer-events: none !important;
+    cursor: pointer !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.boton-ceramica.activo {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    pointer-events: auto !important;
+}
+
+.boton-ceramica img {
+    width: 100% !important;
+    height: auto !important;
+    opacity: 1 !important;
+    display: block !important;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)) !important;
+}
+
+
+.mancha-tinta.activa {
+    z-index: 99999 !important; 
+}
+
+/* ===TEXTOS=== */
+.contenedor-textos {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    pointer-events: none;
+    text-align: center;
+}
+
+.texto-activo {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background: rgba(245, 240, 232, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    color: #2D3E4F;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: opacity 0.8s ease;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    border: 1px solid rgba(109, 76, 65, 0.1);
+}
+
+.texto-activo.visible {
+    opacity: 0.7;
+}
+
+.texto-izquierda {
+    left: 10%;
+    max-width: 400px;
+    transform: translateX(0);
+    margin-bottom: 15%;
+    text-align: left;
+}
+
+.texto-derecha {
+    left: auto;
+    right: 10%;
+    max-width: 400px;
+    margin-bottom: 15%;
+    transform: translateX(0);
+    text-align: right;
+}
+
+.texto-inferior {
+    bottom: 80px;
+    text-align: center;
+}
+
+.titulo-principal {
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    border: none;
+}
+
+/* ===INDICADOR SCROLL=== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #6D4C41;
+    opacity: 0.8;
+    z-index: 100;
+    animation: rebota 1.5s infinite;
+}
+
+@keyframes rebota {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+.pantalla-final {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+.pantalla-final.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.fondo-negro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+.boton-final {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.boton-final img {
+    width: 150px;
+    filter: drop-shadow(0 0 20px gold);
+    transition: transform 0.3s;
+}
+
+.boton-final img:hover {
+    transform: scale(1.1);
+}
+
+.boton-final span {
+    display: block;
+    margin-top: 20px;
+    font-family: 'Sen', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+}
+/* ==========================================
+   INDICADOR DE PUNTITOS
+   ========================================== */
+.puntitos-container {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10000;
+}
+
+.puntito {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(212, 107, 58, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.puntito-activo {
+    background: #D46B3A;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px #D46B3A;
+}

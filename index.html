@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El conejo en la Luna · Intro</title>
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styleCon.css">
+</head>
+<body>
+
+    <!-- Pantalla fija con la escena -->
+    <div class="pantalla-fija">
+        
+        <!-- Elementos visuales -->
+        <div class="escena">
+            <!-- Luna de fondo -->
+            <img src="img/Luna.png" class="luna" alt="Luna">
+            
+            <!-- Resplandor (va entre luna y conejo) -->
+            <img src="img/conejores.png" class="resplandor" alt="Resplandor">
+            
+            <!-- Nubes que se abren con el tiempo -->
+            <img src="img/nube1.png" class="nube nube1" alt="Nube izquierda">
+            <img src="img/nube2.png" class="nube nube2" alt="Nube derecha">
+            
+            <!-- CONEJO QUE ES EL BOTÓN (envuelto en un enlace) -->
+            <a href="estante-culturas.html" class="enlace-conejo" id="conejoBoton">
+                <img src="img/conejo.png" class="conejo" alt="Conejo en la luna - Haz clic para explorar">
+            </a>
+        </div>
+
+        <!-- CONTENEDOR DE TEXTOS (siempre en la misma posición) -->
+        <div class="contenedor-textos" id="contenedorTextos">
+            <div class="texto-activo" id="texto1">En muchas culturas del mundo...</div>
+            <div class="texto-activo" id="texto2">...las personas han mirado a la luna...</div>
+            <div class="texto-activo" id="texto3">...y han visto la figura de un conejo.</div>
+            <div class="texto-activo" id="texto4">Un mismo símbolo en diferentes regiones.</div>
+            <div class="texto-activo" id="texto5">Haz clic en el conejo para descubrir las historias</div>
+        </div>
+
+        <!-- Pequeño indicador de scroll -->
+        <div class="scroll-indicator">↓ Desliza para descubrir ↓</div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

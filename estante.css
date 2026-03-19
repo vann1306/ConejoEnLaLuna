@@ -1,0 +1,155 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sen', sans-serif;
+    background-color: #0B0723; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.estante-container {
+    position: absolute;
+    width: min(100%, 100%);
+    aspect-ratio: 16/9; 
+    background-image: url('img/estante.png');
+    background-size: contain;
+    background-position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.grid-objetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: min(40px, 5%);
+    width: 90%;
+    height: 88%;
+    position: relative;
+    z-index: 2;
+    align-items: end; 
+}
+.celda-objeto {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: end; /* Alinea al fondo de cada celda */
+    position: relative;
+    height: 100%; /* Ocupa toda la altura de la celda */
+}
+
+.objeto-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 0; /* Asegura que no hay margen extra */
+}
+
+.objeto {
+    display: block;
+    width: 100%;
+    max-width: 230px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+    animation: apareceObjeto 0.5s ease forwards;
+    opacity: 0;
+    
+    /* IMPORTANTE: Elimina cualquier espacio extra debajo de la imagen */
+   
+}
+
+
+/* Diferentes delays para cada objeto (efecto escalera) */
+.celda-objeto:nth-child(1) .objeto { animation-delay: 0.1s; }
+.celda-objeto:nth-child(2) .objeto { animation-delay: 0.2s; }
+.celda-objeto:nth-child(3) .objeto { animation-delay: 0.3s; }
+.celda-objeto:nth-child(4) .objeto { animation-delay: 0.4s; }
+.celda-objeto:nth-child(5) .objeto { animation-delay: 0.5s; }
+.celda-objeto:nth-child(6) .objeto { animation-delay: 0.6s; }
+
+@keyframes apareceObjeto {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   EFECTOS INTERACTIVOS
+   ========================================== */
+.objeto:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 10px 20px rgba(255, 215, 0, 0.5));
+}
+
+.objeto:active {
+    transform: scale(0.95);
+}
+
+/* ==========================================
+   TOOLTIPS (NOMBRES DE LAS CULTURAS)
+   ========================================== */
+.objeto-tooltip {
+    position: absolute;
+    bottom: -30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(11, 7, 35, 0.8);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(240, 178, 122, 0.5);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.celda-objeto:hover .objeto-tooltip {
+    opacity: 1;
+}
+
+#objeto-africa {
+    max-height: 300px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+#objeto-japon {
+    max-height: 300px;
+    width: auto;
+}
+
+#objeto-mexica {
+    margin-bottom: -10px; 
+}
+#objeto-china {
+    margin-bottom: 10px; 
+}
+#objeto-conejo {
+    margin-bottom: 10px; 
+}
+#objeto-shama {
+    margin-bottom: 10px; 
+}

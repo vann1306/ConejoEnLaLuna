@@ -1,0 +1,116 @@
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Repositorio conejo en la luna</title>
+        <link rel="stylesheet" href="syless.css">
+    
+    </head>
+    <body>
+        <main>
+            <!-- PRIMERA SECCION-->
+             <section id="sec1" class="panel">
+                <div class="content">
+                    <h1>Titulo</h1>
+                    <p> Primera impresion </p>
+                </div>
+             </section>
+             <!-- Segunda SECCION-->
+             <section id="sec2" class="panel">
+                <div class="content">
+                    <h2>Conceptos</h2>
+                    <p> Segunda impresion </p>
+                </div>
+             </section>
+             <!-- Tercera SECCION-->
+             <section id="sec3" class="panel">
+                <div class="content">
+                    <h2>Procesos</h2>
+                    <p> tercera impresion </p>
+                </div>
+             </section>
+             <!-- cuarta SECCION-->
+             <section id="sec4" class="panel">
+                <div class="content">
+                    <h2>Final</h2>
+                    <p> Cuarta impresion </p>
+                </div>
+             </section>
+        </main>
+    </body>
+</html>
+
+
+/*comentario*/
+/*selector universal*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{scroll-behavior: smooth;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+/*NAV*/
+.main-header{
+    position:fixed;
+    width: 100%;
+    top: 0%;
+    z-index: 1000;
+}
+.nav{
+    background: rgba(red, green, blue, alpha);
+    backdrop-filter: blur (8px);
+}
+.nav-list{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 1rem;
+}
+.nav a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+.nav a:hover{
+    opacity: 0.6;
+
+}
+
+/*Secciones*/
+.panel{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+#sec1{    background: #fff032;}
+#sec2{    background: #65f432;}
+#sec3{    background: #435432;}
+#sec4{    background: #183432;}
+
+/*contenido*/
+.content{
+    text-align: center;
+    max-width: 600px;
+    animation: fadeUp 3s ease forwards;
+}
+
+/*Animacion*/
+@keyframes fadeUp{
+   from{
+    opacity: 0;
+    transform: translateY(40px);
+   }
+   to{
+    opacity: 1;
+    transform: translateY(0);
+   }
+}

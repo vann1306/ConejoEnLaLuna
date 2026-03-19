@@ -1,0 +1,156 @@
+body{
+    background-color: #181340;
+    font-family: 'Sen', sans-serif;
+}
+
+h1{
+    color: #2c3e50;
+}
+
+p{
+    color: white;
+
+}
+
+.intro{
+height:100vh;
+background:#181340;
+overflow:hidden;
+position:relative;
+color:white;
+}
+
+.escena{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.luna{
+width:350px;
+position:absolute;
+z-index: index 1;;
+}
+
+.nube{
+    position:absolute;
+    width:550px;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index:4;
+}
+
+.nube1{
+    top:40%;
+    animation:nubeIzquierda 30s ease forwards;
+}
+
+@keyframes nubeIzquierda{
+    0%{
+        transform:translate(-50%, -50%);
+    }
+    100%{
+        transform:translate(-250%, -50%);
+    }
+}
+.nube2{
+    top:65%;
+    animation:nubeDerecha 30s ease forwards;
+}
+
+@keyframes nubeDerecha{
+0%{
+transform:translate(-50%, -50%);
+}
+
+100%{
+transform:translate(150%, -50%);
+}
+}
+
+.conejo{
+position:absolute;
+width:280px;
+opacity:0;
+z-index:2;
+
+animation:apareceConejo 4s ease forwards;
+animation-delay:3s;
+}
+
+@keyframes apareceConejo{
+
+0%{
+opacity:0;
+
+}
+
+100%{
+opacity:1;
+}
+
+}
+
+.resplandor{
+position:absolute;
+width:280px;
+opacity:0;
+z-index:3;
+animation:brillo 3s ease forwards;
+animation-delay:6s;
+}
+
+@keyframes brillo{
+
+0%{
+opacity:0;
+transform: scale(1);
+}
+
+100%{
+opacity:0.7;
+transform:scale(1.4);
+}
+
+}
+.resplandormas{
+position:absolute;
+width:280px;
+opacity:0;
+z-index:3;
+animation:brillo2 14s ease forwards;
+animation-delay:9s;
+filter: blur(20px);
+}
+
+@keyframes brillo2{
+
+0%{
+opacity:0;
+transform: scale(1);
+}
+
+100%{
+opacity:1;
+transform:scale(10);
+}
+
+}
+
+
+.textoIntro{
+position:absolute;
+bottom:40px;
+width:100%;
+text-align:center;
+padding:20px;
+font: size 16px;
+line-height:1.6;
+}
+
+
+
+

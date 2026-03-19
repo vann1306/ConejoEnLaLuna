@@ -1,0 +1,439 @@
+/* ==========================================
+   CULTURA MEXICA - EL CONEJO QUE TOCÓ LA LUNA
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sen', sans-serif;
+    background-color: #2D1B0F;
+    height: 1000vh; /* Altura para scroll */
+    overflow-x: hidden;
+}
+
+.pantalla-fija {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: #2D1B0F;
+}
+
+/* ==========================================
+   ESCENA - TODAS LAS IMÁGENES
+   ========================================== */
+.escena {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+img {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 1s ease-in-out, left 0.8s ease-in-out, right 0.8s ease-in-out, bottom 0.8s ease-in-out;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+img.activo {
+    opacity: 1;
+}
+
+/* Fondo textura (siempre visible) */
+.fondo-textura {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    z-index: 0;
+}
+
+/* Mapa del mundo */
+.mapa {
+    width: 0%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.mapa.activo {
+    width: 80%;
+}
+
+.suelo {
+    width: 100%;
+    height: 15%;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.suelo.activo {
+    opacity: 1;
+}
+
+/* Río */
+.rio {
+    left: 100%;
+    transition: left 1s ease-in-out;
+}
+
+.rio.activo {
+    left: 0;
+}
+
+/* Quetzalcóatl */
+.quetzal {
+    width: 180px;
+    bottom: 15%;
+    left: -150px;
+    z-index: 20;
+    transition: left 1s ease-in-out, bottom 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.quetzal.activo {
+    left: 10%;
+}
+
+.quetzal.avanza-40 {
+    left: 30%;
+}
+
+.quetzal.avanza-50 {
+    left: 45%;
+}
+
+.quetzal.montana {
+    left: 40%;
+    bottom: 30%;
+    transform: rotate(15deg);
+}
+
+.quetzal.fuera {
+    left: 110%;
+}
+
+/* Sol y luna */
+.sol, .luna {
+    width: 120px;
+    top: 10%;
+ transition: opacity 5s ease-in-out;
+}
+
+.sol {
+    left: 10%;
+   
+    
+}
+
+.luna {
+    right: 10%;
+    
+}
+
+/* Parpadeo */
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+}
+
+.sol.activo {
+    animation: parpadeo 3s infinite;
+}
+.luna.activo {
+    animation: parpadeo 3s infinite;
+    animation-delay: 1.5s ;
+}
+
+
+/* Montaña */
+.montana {
+    width: 200px;
+    bottom: 14%;
+    right: -200px;
+    z-index: 15;
+    transition: right 0.8s ease-in-out;
+}
+
+.montana.activo {
+    right: 50%;
+}
+
+/* Ideogramas de voz */
+.voz {
+    width: 50px;
+    z-index: 30;
+}
+
+.voz-derecha {
+    right:40%;
+    top: 60%;
+}
+
+.voz-izquierda {
+    left: 58%;
+    top: 65%;
+}
+
+/* Conejo */
+.conejo {
+    width: 100px;
+    right: -100px;
+    bottom: 15%;
+    z-index: 25;
+    transition: right 0.6s ease-in-out, width 0.3s ease-in-out;
+}
+
+.conejo.activo {
+    right: 30%;
+}
+
+.conejo.grande {
+    width: 120px;
+}
+
+/* Manos sosteniendo conejo */
+.manos {
+    width: 500px;
+    right: 10%;
+    bottom: 0%;
+    z-index: 30;
+}
+
+/* Conejo en luna final */
+.conejo-luna-final {
+    width: 550px;
+    right: 10%;
+    bottom: 15%;
+    z-index: 30;
+}
+
+/* ==========================================
+   TEXTOS (formato similar a China)
+   ========================================== */
+
+.texto-activo {
+    max-width: 500px;
+    padding: 20px 30px;
+    background: rgba(45, 27, 15, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    color: #F5E6D3;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    border: 1px solid #D46B3A;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    position: absolute;
+}
+
+.texto-activo.visible {
+    opacity: 1;
+}
+
+.texto-inferior {
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.texto-superior {
+    top: 5%; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.texto-superior-derecho {
+    top: 5%; 
+    right: 5%;
+    text-align: right;
+}
+.contenedor-textos {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+    z-index: 100;
+    pointer-events: none;
+}
+.texto-izquierda {
+    left: 5%;
+    bottom: 20%;
+    text-align: left;
+}
+
+.texto-centro {
+    top: 37%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.titulo-principal {
+    
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+}
+
+.titulo-pincel {
+    font-family: 'Kolker Brush', cursive;
+    font-size: 5rem;
+    color: #680707;
+    text-shadow: 2px 2px 4px rgba(10, 10, 10, 0.5);
+    margin-bottom: 10px;
+}
+
+.titulo-principal .subtitulo {
+    font-size: 2rem;
+    font-family: 'sen', sans-serif;
+    color: #502715;
+    letter-spacing: 2px;
+}
+
+/* ==========================================
+   PANTALLA FINAL
+   ========================================== */
+.pantalla-final {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+.pantalla-final.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.fondo-negro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+.boton-final {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.boton-final img {
+    width: 150px;
+    opacity: 1;
+    filter: drop-shadow(0 0 20px #D46B3A);
+    transition: transform 0.3s;
+}
+
+.boton-final img:hover {
+    transform: scale(1.1);
+}
+
+.boton-final span {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* ==========================================
+   INDICADOR SCROLL
+   ========================================== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #D46B3A;
+    opacity: 0.5;
+    z-index: 50;
+    animation: rebota 1.5s infinite;
+}
+
+@keyframes rebota {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ==========================================
+   ASEGURAR QUE TEXTOS ESTÉN SOBRE IMÁGENES
+   ========================================== */
+
+.texto-activo {
+    z-index: 1001; /* AÚN MÁS ALTO */
+    position: absolute;
+    /* El resto de tus estilos se mantienen */
+}
+
+/* Específico para textos superiores */
+.texto-superior,
+.texto-superior-derecho {
+    z-index: 1002; /* MÁXIMO */
+}
+
+/* ==========================================
+   INDICADOR DE PUNTITOS
+   ========================================== */
+.puntitos-container {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10000;
+}
+
+.puntito {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(212, 107, 58, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.puntito-activo {
+    background: #D46B3A;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px #D46B3A;
+}
