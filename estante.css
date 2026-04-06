@@ -136,11 +136,12 @@ body {
 #objeto-africa {
     max-height: 300px;
     width: auto;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 #objeto-japon {
     max-height: 300px;
+    margin-bottom: 30px;
     width: auto;
 }
 
@@ -151,9 +152,9 @@ body {
     margin-bottom: 10px; 
 }
 #objeto-conejo {
-    margin-bottom: 10px; 
+    margin-bottom: 30px; 
 }
 #objeto-shama {
-    margin-bottom: 10px; 
+    margin-bottom: 30px; 
 }
 
